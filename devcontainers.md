@@ -92,6 +92,7 @@ DevContainers make my life **much** better:
 
 ---
 
+# DevContainers in VSCode is kind of a **big deal**
 ![](vscode.png)
 
 ---
