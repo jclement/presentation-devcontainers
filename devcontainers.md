@@ -175,25 +175,23 @@ DevContainers make my life **much** better:
 ```docker
 FROM mcr.microsoft.com/devcontainers/base:jammy
 
-# Get this thing up-to-date
-RUN apt-get update 
-RUN apt-get upgrade -y
-
-# Install some core tools
-RUN apt-get install -y git curl inotify-tools wget imagemagick
-
-# Erlang Deps
-RUN apt-get install -y build-essential autoconf m4 libncurses5-dev 
-RUN apt-get install -y libwxgtk3.0-gtk3-dev libwxgtk-webview3.0-gtk3-dev 
-RUN apt-get install -y libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev 
-RUN apt-get install -y unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
-
-# Install ASDF
-RUN git clone https://github.com/asdf-vm/asdf.git /opt/asdf --branch v0.13.1
-
-# install Elixir and Erlang
 ARG ELIXIR_VERSION=1.17.1
 ARG ERLANG_VERSION=27.0
+ARG ASDF_VERSION=0.13.1
+
+# Get this thing up-to-date
+RUN apt-get update \
+  && apt-get upgrade -y \
+  && apt-get install -y git curl inotify-tools wget imagemagick \
+     build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev \ 
+     libwxgtk-webview3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev \ 
+     libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils \
+     libncurses-dev openjdk-11-jdk
+
+# Install ASDF
+RUN git clone https://github.com/asdf-vm/asdf.git /opt/asdf --branch v${ASDF_VERSION}
+
+# install Elixir and Erlang
 RUN sh -c 'echo "source /opt/asdf/asdf.sh" >> /home/vscode/.bashrc'
 RUN sudo -u vscode bash -c 'source /opt/asdf/asdf.sh && asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git'
 RUN sudo -u vscode bash -c "source /opt/asdf/asdf.sh && asdf install erlang $ERLANG_VERSION && asdf global erlang $ERLANG_VERSION"
