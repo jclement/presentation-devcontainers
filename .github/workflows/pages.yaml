@@ -28,9 +28,13 @@ jobs:
         with:
           node-version: '18'
 
+      # Remove README.md
+      - name: Remove README.md
+        run: rm README.md
+
       # Build Marp slides to HTML
       - name: Build Marp slides
-        run: npx @marp-team/marp-cli@latest devcontainers.md -o index.html
+        run: npx @marp-team/marp-cli@latest -I . 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
