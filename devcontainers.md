@@ -4,7 +4,7 @@ title: Why I ❤️ DevContainers
 paginate: true
 color: dark
 header: Why I ❤️ DevContainers
-footer: Jeff Clement (https://www.erraticbits.ca) // June 2024
+footer: Jeff Clement (https://owg.me) // Jan 2025
 transition: fade
 ---
 
@@ -15,9 +15,7 @@ transition: fade
 ---
 <!-- class: normal -->
 <!-- footer: " " -->
-# Problems
-
-> These problems are especially bad for **hobby** projects!
+# Problems...
  
 1. Development machines tend to collect too many tools over time.
 2. Project dependencies can conflict with each other.
@@ -25,6 +23,19 @@ transition: fade
 4. Dealing with inconsistencies in dependencies/tooling on multi-dev projects.
 
 ---
+
+<!-- class: invert -->
+
+# These problems are especially bad for **hobby** projects and those who **dabble**!
+
+---
+
+<!-- class: normal -->
+
+# Containers to the Rescue!
+
+---
+
 # What is a *Container*?
 
 > A container (Docker) is a lightweight, standalone executable package that **includes everything needed to run a piece of software**: code, runtime, system tools, libraries, and settings. It allows you to install and run software in an **isolated environment**, ensuring consistent performance across different environments without the overhead of a full virtual machine.
