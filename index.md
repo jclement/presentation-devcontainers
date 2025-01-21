@@ -10,7 +10,7 @@ transition: fade
 
 # Why I ❤️ DevContainers
 <!-- class: invert -->
-![bg grayscale brightness:10%](title.webp)
+![bg grayscale brightness:30%](title.webp)
 
 ---
 <!-- class: normal -->
